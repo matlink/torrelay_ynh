@@ -1,2 +1,26 @@
-#! /bin/bash
+#!/bin/bash
 
+app=torrelay
+torconf=/etc/tor/torrc
+
+# Retrieve arguments
+port=$(sudo yunohost app setting $app port)
+nickname=$(sudo yunohost app setting $app nickname)
+contact=$(sudo yunohost app setting $app contact)
+policy=$(sudo yunohost app setting $app policy)
+
+
+#copying conf file
+sudo cp ../conf/torrc $torconf
+sudo chmod 660  $torconf
+sudo chown :debian-tor $torconf
+
+#configuring with given settings
+sudo sed -i "s/YNH_LISTENING_PORT_PLACEHOLDER/$port/g" $torconf
+sudo sed -i "s/YNH_NICKNAME_PLACEHOLDER/$nickname/g" $torconf
+sudo sed -i "s/YNH_CONTACT_INFO_PLACEHOLDER/$contact/g" $torconf
+if [[ "$policy" = "Yes" ]]; then
+	sudo sed -i "s/YNH_EXIT_POLICY_PLACEHOLDER/accept/g" $torconf
+else 
+	sudo sed -i "s/YNH_EXIT_POLICY_PLACEHOLDER/reject/g" $torconf
+fi

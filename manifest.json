@@ -3,7 +3,7 @@
     "id": "torrelay",
     "description": {
         "en": "Tor relays are also referred to as routers or nodes. They receive traffic on the Tor network and pass it along. Check out the Tor website for a more detailed explanation of how Tor works.",
-        "fr": "Les relais tor sont aussi appelés routeurs ou noeuds. Ils recoivent le traffic du réseau Tor et le transferent au noeud suivant. Rendez-vous sur le site du projet Tor pour pour d'explications."
+        "fr": "Les relais tor sont aussi appelés routeurs ou noeuds. Ils recoivent le traffic du réseau Tor et le transfèrent au noeud suivant. Rendez-vous sur le site du projet Tor pour plus d'explications."
     },
     "developer": {
         "name": "Matlink",
