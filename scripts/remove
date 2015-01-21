@@ -1,0 +1,19 @@
+#!/bin/bash
+
+app=torrelay
+
+#getting port used by tor to close it
+port=$(sudo yunohost app setting $app port)
+
+#uninstall mumble and its dependencies
+sudo apt-get autoremove -y tor > /dev/null 2>&1
+
+#close ports
+sudo yunohost firewall disallow Both $port > /dev/null 2>&1
+sudo yunohost firewall disallow --ipv6 Both $port > /dev/null 2>&1
+
+#remove config files if not removed
+sudo rm -rf /etc/tor 
+
+#removing mumble-server from services
+sudo yunohost service remove tor

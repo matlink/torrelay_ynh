@@ -1,0 +1,54 @@
+{
+    "name": "Tor Relay",
+    "id": "torrelay",
+    "description": {
+        "en": "Tor relays are also referred to as routers or nodes. They receive traffic on the Tor network and pass it along. Check out the Tor website for a more detailed explanation of how Tor works.",
+        "fr": "Les relais tor sont aussi appelés routeurs ou noeuds. Ils recoivent le traffic du réseau Tor et le transferent au noeud suivant. Rendez-vous sur le site du projet Tor pour pour d'explications."
+    },
+    "developer": {
+        "name": "Matlink",
+        "email": "matlink@matlink.fr",
+        "url": "https://www.torproject.or"
+    },
+    "multi_instance": "false",
+    "arguments": {
+        "install" : [
+        {
+            "name": "port",
+            "ask": {
+                "en": "Choose a port on which Tor will listen on",
+                "fr": "Choisissez un port sur lequel Tor va écouter"
+        },
+            "example": "9091",
+            "default": "9091"
+        },
+        {
+            "name": "nickname",
+                "ask": {
+                "en": "Choose a nickname for your tor relay",
+                "fr": "Choisissez un pseudonyme pour votre relai tor"
+                },
+            "example": ""
+        },
+        {
+            "name": "contact",
+            "ask": {
+                "en": "Choose an email address to be contacted on",
+                "fr": "Choisissez une adresse email sur laquelle vous pouvez être contacté"
+            },
+            "example": ""
+        },
+        {
+            "name": "policy",
+            "ask": {
+                "en": "Choose if you want to be an exit node or not. If you don't know what it is, you should set it to No",
+                "fr": "Choisissez si vous voulez pouvoir être choisi comme noeud de sortie. Si vous ne savez pas ce que c'est, vous devriez laisser ce paramètre à Non"
+            },
+                "choices": ["Yes", "No"],
+                "default": "No"
+        }
+
+
+        ]
+    }
+}
