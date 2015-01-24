@@ -24,3 +24,6 @@ if [[ "$policy" = "Yes" ]]; then
 else 
 	sudo sed -i "s/YNH_EXIT_POLICY_PLACEHOLDER/reject/g" $torconf
 fi
+
+#restart tor service
+sudo /etc/init.d/tor restart
